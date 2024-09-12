@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h2>About {{about_name}}</h2>
+  <h2>About {{about_name}}</h2>
 {% if about_aboutMe == " " %}
-<p>This is an About page for {{about_name}}. This is the standard about page. </p>
+  <p>This is an About page for {{about_name}}. This is the standard about page. </p>
 {% else %}
-<p>This is an About page for {{about_name}}. {{about_name}} wants to shout "{{about_aboutMe}}" </p>
+  <p>This is an About page for {{about_name}}. {{about_name}} wants to shout "{{about_aboutMe}}" </p>
 {% endif %}
 
 <!-- Add links to special About pages here -->
