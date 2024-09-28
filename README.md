@@ -20,9 +20,9 @@ Noah Alavi, Frances Andrews, Shawn Spicer, and Athene Yowell.
 - This project was built on top of https://bitbucket.org/txstatecs3398all/flask_email_openai_example
 
 ## Features
-- User Profile: Users are able to set their name for a personalized greeting, select their preferences for music or quotes, and the information is stored persistently, so every time you open the app it will remember your settings. Corresponding User Story Keys: 
-- Themes: Users will be greeted by seasonal themes that tie together with other features of the app. Festive music and snowing images will be played on the home screen during the Holidays, and users will be able to select their preferred choice of light and dark mode. Corresponding User Story Keys: 
-- Calendaring: Users will be able to sync their calendars from various sources and create their own events and reminders. Corresponding User Story Keys: 
+- Homepage: Users will be greeted by a calming homepage, which sets the tone for the rest of the app. They will be greeted by name, and it will include a background image that pulls from an image gallery API. Corresponding User Story Keys: GRO-82
+- Journaling: Users will be able to create and store journal entries. Features include: a symbol key to denote the type of journals they are creating, a table of contents/index, and a search function to easily find data in their journals. Corresponding User Story Keys: GRO-79, GRO-83, GRO-84
+- Calendaring: Users will be able to view a calendar, create events and reminders, and switch between views. They will be able to import other calendars in order to consolidate their tasks. Corresponding User Story Keys: 
 
 ## Project Status
 Project is: _in progress_ 
