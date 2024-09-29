@@ -14,23 +14,28 @@ body {
   padding: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.5em;
-  color: #444;
+  color: #adadad;
+  padding: 1em;
 }
 
-div.logo {
-  height: 2em;
-  padding: 1em;
-  background-image: url("C: \Users\ccyow\BitBucket\newbulletjournal\intro_to_flask\static\img\BulletJournalIcon.png")
+img {
+  opacity: 0.1;
 }
 
 /* Create dark grey header with a white logo */
 
 header {
   background-color: #2B2B2B;
-  height: 60px;
+  height: 70px;
   width: 100%;
   opacity: .9;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+header h1.logoimage {
+  height: 100%;
+  width: 100%;
 }
 
 header h1.logo {
@@ -49,7 +54,7 @@ header h1.logo:hover {
 /* Center the body content */
 
 .container {
-  width: 1100px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -94,7 +99,7 @@ h3 {
 
 .menu {
   float: right;
-  margin-top: 8px;
+  margin-top: 3px;
 }
 
 .menu li {
