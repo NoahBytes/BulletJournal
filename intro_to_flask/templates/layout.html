@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Flask App</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-  </head>
-  <body>
+
+<head>
+
+  <title>Flask App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
 
   <header>
     <div class="container">
-      <h1 class="logo">Flask App</h1>
+      <h1 class=logo><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-book-text">
+          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
+          <path d="M8 11h8" />
+          <path d="M8 7h6" />
+        </svg>
+        <style>
+          path {
+            stroke: black;
+          }
+
+          @media (prefers-color-scheme: dark) {
+            path {
+              stroke: white;
+            }
+          }
+        </style>Bullet Journal
+      </h1>
       <nav>
         <ul class="menu">
           <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -23,10 +44,11 @@
     </div>
   </header>
 
-    <div class="container">
-      {% block content %}
-      {% endblock %}
-    </div>
+  <div class="container">
+    {% block content %}
+    {% endblock %}
+  </div>
 
-  </body>
+</body>
+
 </html>
