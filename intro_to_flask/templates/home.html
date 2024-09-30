@@ -5,5 +5,14 @@
       <h3>This is the home page for the Flask app<h3>
 
 </div>
-<img src="{{img_url}}" width="500" height="600">>
+<style>
+  body {
+    background-image: url('{{img_url}}');
+    background-size: cover;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.522);
+    background-blend-mode: darken;
+    /* Make it cover the whole viewport height */
+  }
+</style>
 {% endblock %}
