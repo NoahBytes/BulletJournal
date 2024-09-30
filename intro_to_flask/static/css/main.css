@@ -21,6 +21,15 @@ body {
   background-size: cover;
 }
 
+div.papergrid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, grey 1px, transparent 1px),
+    linear-gradient(to bottom, grey 1px, transparent 1px);
+  background-color: #e5e5e5;
+  color: #000000;
+}
+
 img {
   opacity: 1;
 }
@@ -30,7 +39,7 @@ img {
 header {
   background-color: #2B2B2B;
   height: 70px;
-  width: 100%;
+  width: 50%;
   opacity: .9;
   margin-bottom: 5px;
   display: inline-block;
