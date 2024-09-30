@@ -16,13 +16,13 @@ body {
   font-size: 1.5em;
   color: #adadad;
   padding: 1em;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.447), rgba(255, 255, 255, 0.479));
-  background-image: url("../img/alex-dukhanov-ZxZQk7777R4-unsplash.jpg");
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.447), rgba(255, 255, 255, 0.479));
+  background-image: url("../img/alex-dukhanov-ZxZQk7777R4-unsplash.jpg"); */
   background-size: cover;
 }
 
 img {
-  opacity: 0.1;
+  opacity: 1;
 }
 
 /* Create dark grey header with a white logo */

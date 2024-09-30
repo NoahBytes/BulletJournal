@@ -23,10 +23,12 @@ back_img_blueprint = Blueprint('back_img', __name__)
 @app.route('/back_img',methods=['GET'])
 def back_img():  
   py_un = PyUnsplash(api_key=app_key)
-  search = py_un.search(type_='photos', query='red,car', w = 100, h = 100)
+  search = py_un.search(type_='photos', page = 1, per_page = 1, query='coffee, shop')
   for photo in search.entries:
+    photo.refresh()
     returnPhoto = photo.link_download
     print(photo.id, photo.link_download)
+  # photo = py_un.photos(type_="single", photo_id='l0_kVknpO2g')
   return returnPhoto
   #print(photo.entries.get_attribution(format='html'))
   #return link.link_download
