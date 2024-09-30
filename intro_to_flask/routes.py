@@ -32,11 +32,11 @@ app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
 mail = Mail(app)
+background_image = back_img()
 
 @app.route('/')
 def home():
-  img_url = back_img()
-  return render_template('home.html', img_url = img_url)
+  return render_template('home.html', img_url = background_image)
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
