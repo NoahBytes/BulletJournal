@@ -7,12 +7,12 @@ import sys
 sys.dont_write_bytecode = True
 from flask import render_template, request, Flask, Blueprint
 
-about_blueprint = Blueprint('about', __name__)
+journal_blueprint = Blueprint('journal', __name__)
 
-@about_blueprint.route('/about',methods=['GET', 'POST'])
-@app.route('/about',defaults={'route_with_name': None})
-@app.route('/about/<route_with_name>')
-def about(route_with_name):
+@journal_blueprint.route('/journal',methods=['GET', 'POST'])
+@app.route('/journal',defaults={'route_with_name': None})
+@app.route('/journal/<route_with_name>')
+def journal(route_with_name):
   # Set default about me message and team member names.
   about_me = 'I like CS3398 allot!!!!!!!'
   team_names = ["Mike", "Sally", "Tom"]
@@ -32,9 +32,9 @@ def about(route_with_name):
       cleaned_name = is_english_aphabetic.group(0)
     
     if cleaned_name in team_names:                  
-      return render_template('about.html', about_name=cleaned_name, about_aboutMe=about_me, team_names=team_names)
+      return render_template('journal.html', about_name=cleaned_name, about_aboutMe=about_me, team_names=team_names)
     else:
       cleaned_name = "Us"
   else:
     cleaned_name = "Us"
-  return render_template('about.html', about_name=cleaned_name, about_aboutMe="We like CS3398 allot!!!!", team_names=team_names)
+  return render_template('journal.html', about_name=cleaned_name, about_aboutMe="We like CS3398 allot!!!!", team_names=team_names)
