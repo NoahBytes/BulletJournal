@@ -12,6 +12,8 @@ from .ask_python.ask_route import ask_blueprint
 from .draw_python.draw_route import draw_blueprint
 from .journal_python.journal_route import journal_blueprint
 from .transcribe_python.transcribe_route import transcribe_blueprint
+from .background_image_python.back_img_route import back_img_blueprint
+from.background_image_python.back_img_route import back_img
 
 
 #The mail_user_name and mail_app_password values are in the .env file
@@ -33,7 +35,8 @@ mail = Mail(app)
 
 @app.route('/')
 def home():
-  return render_template('home.html')
+  img_url = back_img()
+  return render_template('home.html', img_url = img_url)
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
@@ -59,4 +62,4 @@ app.register_blueprint(journal_blueprint)
 app.register_blueprint(ask_blueprint) 
 app.register_blueprint(draw_blueprint) 
 app.register_blueprint(transcribe_blueprint)
-  
+app.register_blueprint(back_img_blueprint)
