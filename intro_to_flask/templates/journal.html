@@ -1,8 +1,25 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h2>
-        Journal
-    </h2>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Editor</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+  <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+</head>
 
+<body>
+  <h2>
+    Journal
+  </h2>
+  <form method="POST" action="/journal/save">
+      <textarea id="markdown-editor" name="content"></textarea>
+      <button type="submit">Save</button>
+  </form>
+  
+  <script>
+      var simplemde = new SimpleMDE({ element: document.getElementById("markdown-editor") });
+  </script>
+</body>
 {% endblock %}
