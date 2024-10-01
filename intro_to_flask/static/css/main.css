@@ -1,27 +1,74 @@
+/*Global Variables*/
 @font-face {
   font-family: typewriter;
   src: url(TT2020StyleE-Regular.woff2);
 }
 
+:root {
+  --text: #000000;
+  --text-red: #e14a49;
+  --text-green: #15b64f;
+  --text-blue: #3f76ed;
+  --text-purple: #9b4ff0;
+  /* Page Colors */
+  --page: #f9f0ddb8;
+  --page-manila: #f3deaf;
+  --page-card: #f3deaf;
+  --grid-size: 32px 32px;
+  font-family: typewriter;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #00000077;
+    --text: #ffffff;
+  }
+
+  body {
+    color: #000000;
+    background-color: #101010;
+  }
+
+  #mainContent {
+    background-color: #000;
+  }
+
+}
+
+div.page-grid {
+  background-size: var(--grid-size);
+  background-image:
+    linear-gradient(to right, grey 1px, transparent 1px),
+    linear-gradient(to bottom, grey 1px, transparent 1px);
+  background-color: var(--page);
+  /* background-color: var(--page-white); */
+}
+
+div.page-dot {
+  font-family: typewriter;
+  background-size: var(--grid-size);
+  background-image: radial-gradient(circle, var(--text) 1px, var(--page) 1px);
+  /* background-color: var(--page-white); */
+  color: var(--text)
+}
+
+div.page-manilla {
+  background-color: var(--page-manila);
+  /* background-color: var(--page-white); */
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: typewriter;
   font-size: 1.5em;
-  color: #adadad;
+  color: var(--text);
   padding: 1em;
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.447), rgba(255, 255, 255, 0.479));
   background-image: url("../img/alex-dukhanov-ZxZQk7777R4-unsplash.jpg"); */
   background-size: cover;
-}
-
-div.papergrid {
-  background-size: 40px 40px;
-  background-image:
-    linear-gradient(to right, grey 1px, transparent 1px),
-    linear-gradient(to bottom, grey 1px, transparent 1px);
-  background-color: #e5e5e5;
-  color: #000000;
 }
 
 img {
@@ -32,8 +79,8 @@ img {
 
 header {
   background-color: #2B2B2B;
-  height: 70px;
-  width: 50%;
+  height: 10%;
+  width: 100%;
   opacity: .9;
   margin-bottom: 5px;
   display: inline-block;
@@ -98,26 +145,31 @@ h3 {
   margin-top: 30px;
   text-align: center;
   letter-spacing: -1px;
-  color: #999;
+  color: var(--text);
 }
 
 /* Display navigation links inline */
 
 .menu {
+  text-align: center;
   float: right;
-  margin-top: 3px;
+  margin-top: 35px;
+  color: var(--text);
 }
 
 .menu li {
+  text-align: center;
   display: inline;
 }
 
 .menu li+li {
+  text-align: center;
   margin-left: 35px;
 }
 
 .menu li a {
-  color: #999;
+  text-align: center;
+  color: text;
   text-decoration: none;
 }
 
