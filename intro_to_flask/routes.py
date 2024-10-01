@@ -32,7 +32,7 @@ app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
 mail = Mail(app)
-background_image = back_img()
+background_image = back_img("")
 
 @app.route('/')
 def home():
