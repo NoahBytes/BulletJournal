@@ -1,12 +1,6 @@
-@media (prefers-color-scheme: dark) {
-  body {
-    color: #b0b0b0;
-    background-color: #101010;
-  }
-
-  #mainContent {
-    background-color: #000;
-  }
+@font-face {
+  font-family: typewriter;
+  src: url(TT2020StyleE-Regular.woff2);
 }
 
 body {
