@@ -11,3 +11,5 @@ venv/
 .project
 
 intro_to_flask/temp/
+
+/node_modules
