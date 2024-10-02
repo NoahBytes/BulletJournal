@@ -7,5 +7,5 @@ from flask_wtf import Form
 from wtforms import TextAreaField, SubmitField, validators, ValidationError
 
 class JournalForm(Form):
-    prompt = TextAreaField("What would you like to draw?",  [validators.InputRequired("Please enter a prompt.")])
-    submit = SubmitField("Send") 
+    title = TextAreaField("Title",  [validators.InputRequired("Please enter a title for this journal.")])
+    submit = SubmitField("Save") 
