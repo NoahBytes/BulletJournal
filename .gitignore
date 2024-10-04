@@ -11,3 +11,5 @@ venv/
 .project
 
 intro_to_flask/temp/
+
+intro_to_flask/calendar/credentials.json
