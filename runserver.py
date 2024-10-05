@@ -15,6 +15,10 @@
 # After the above and setting up the database, you should be able to run and debug this program
 import sys 
 sys.dont_write_bytecode = True
-from intro_to_flask import app
+from intro_to_flask import app, db
 
-app.run(debug=True)
+with app.app_context():
+    db.create_all()
+
+if __name__ == '__main__':
+    app.run(debug=True)
