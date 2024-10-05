@@ -18,8 +18,8 @@ db = SQLAlchemy(app)
 
 #mail.init_app(app)
 
-# To avoid circular import issues
 from .routes import mail
 
-# Database schema
-from . import models
+# Import models after db is initialized to avoid circular import
+import intro_to_flask.models
+
