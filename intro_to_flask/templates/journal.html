@@ -1,8 +1,48 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h2>
-        Journal
-    </h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Editor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+</head>
+
+<h2>
+    Journal
+</h2>
+
+{% if success %}
+        <h3>
+            Journal was created successfully
+        </h3>
+    {% else %}
+        {% for error in form.title.errors %}
+            <div class="flash">{{ error }}</div>
+        {% endfor %}
+
+        <form action="{{ url_for('journal') }}" method=post>
+            <!-- 
+            This form has no CSRF protection.  To add, see:
+            https://flask-wtf.readthedocs.io/en/0.15.x/csrf/
+            --> 
+
+            {{ form.title.label }}
+            {{ form.title }}
+
+            <p>
+                Write your thoughts down! <!-- FIXME Probably want to center this later -->
+            </p>
+            
+            <textarea id="markdown-editor" name="content"></textarea>
+            <script>
+                var simplemde = new SimpleMDE({ element: document.getElementById("markdown-editor") });
+            </script>
+
+            {{ form.submit }}
+            <p> It may take a few seconds to save</p>
+        </form>
+    {% endif %}
 
 {% endblock %}

@@ -20,19 +20,7 @@ def journal():
       if form.validate() == False:
         return render_template('journal.html', form=form)
       else:
-        # The following response code adapted from example on: 
-        # https://platform.openai.com/docs/api-reference/images
-        client = OpenAI()
-
-        response = client.images.generate(
-          model="dall-e-3",
-          prompt=form.prompt.data,
-          quality="standard",
-          size="1024x1024",
-          n=1,
-        )
-        display_image_url = response.data[0].url
-        return render_template('journal.html', draw_me_prompt=form.prompt.data,draw_me_response=display_image_url,success=True)
+        return render_template('journal.html', success=True)
       
   elif request.method == 'GET':
       return render_template('journal.html', form=form)
