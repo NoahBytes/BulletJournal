@@ -1,36 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
+
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upcoming Events</title>
+    <title>Calendar and Upcoming Events</title>
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.css">
+
+    <!-- JS -->
+    <script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/toastui-calendar.min.css') }}">
+    <script src="{{ url_for('static', filename='js/toastui-calendar.min.js') }}"></script>
+
     <style>
         .high-priority { background-color: #ff6666; } /* Red */
         .medium-priority { background-color: #ffcc66; } /* Orange */
         .low-priority { background-color: #66ff66; } /* Green */
+        #calendar { /*Critical for rendering calendar because 'main.css' margin:0*/
+    width: 100%;  /* Set width to full */
+    height: 600px; /* Set a minimum height */
+    margin: 20px auto;  /* Center the calendar */
+    box-sizing: border-box;
+  }
     </style>
 </head>
 <body>
-    <h1>Upcoming Events</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Event Name</th>
-                <th>Start Time</th>
-                <th>Description</th>
-                <th>Priority</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for event in events %}
-                <tr class="{{ event.priority_class }}">
-                    <td>{{ event.summary }}</td>
-                    <td>{{ event.start }}</td>
-                    <td>{{ event.description }}</td>
-                    <td>{{ event.priority }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</body>
-</html>
+    <h2>Calendar</h2>
+    <div id="calendar"></div>
+  
+    <script>
+      // Initialize the calendar
+      const calendar = new tui.Calendar('#calendar', {
+        defaultView: 'month',
+        taskView: true,
+        scheduleView: ['time']
+      });
+  
+      // Define the events (this could come from your server or Flask)
+      const events = [
+        {
+          id: '1',
+          calendarId: '1',
+          title: 'Test Event',
+          category: 'time',
+          start: '2024-10-04T23:45:00-05:00',
+          end: '2024-10-05T00:45:00-05:00'
+        }
+      ];
+  
+    </script>
+  </body>
+  
+{% endblock %}
