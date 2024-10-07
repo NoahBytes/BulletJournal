@@ -17,7 +17,27 @@ def get_calendar_events():
         return events
     else:
         print(f"Error fetching events: {response.status_code}, {response.json()}")
-        return []
+        return [] 
+""" 
+def get_calendar_events():
+    # Placeholder static events for testing
+    return [
+        {
+            'summary': 'Test Event 1',
+            'start': {'dateTime': '2024-10-10T10:00:00Z'},
+            'description': 'This is a test event',
+            'priority': 'High',
+            'priority_class': 'high-priority'
+        },
+        {
+            'summary': 'Test Event 2',
+            'start': {'dateTime': '2024-10-11T11:00:00Z'},
+            'description': 'This is another test event',
+            'priority': 'Low',
+            'priority_class': 'low-priority'
+        }
+    ]
+    return render_template('calendar.html', events=events) """
 
 def display_events(events):
     if not events:

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events</title>
+    <style>
+        .high-priority { background-color: #ff6666; } /* Red */
+        .medium-priority { background-color: #ffcc66; } /* Orange */
+        .low-priority { background-color: #66ff66; } /* Green */
+    </style>
+</head>
+<body>
+    <h1>Upcoming Events</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Start Time</th>
+                <th>Description</th>
+                <th>Priority</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in events %}
+                <tr class="{{ event.priority_class }}">
+                    <td>{{ event.summary }}</td>
+                    <td>{{ event.start }}</td>
+                    <td>{{ event.description }}</td>
+                    <td>{{ event.priority }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
