@@ -35,7 +35,7 @@
                 Write your thoughts down! <!-- FIXME Probably want to center this later -->
             </p>
             
-            <textarea id="markdown-editor" name="content"></textarea>
+            {{ form.content }}
             <script>
                 var simplemde = new SimpleMDE({ element: document.getElementById("markdown-editor") });
             </script>
