@@ -1,7 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
-  <div class="jumbo">
-    <h2>Welcome to the Flask app<h2>
-    <h3>This is the home page for the Flask app<h3>
-  </div>
+<div class="page-dot">
+  <h2>Welcome to the Flask app<h2>
+      <h3>This is the home page for the Flask app<h3>
+
+</div>
+<style>
+  body {
+    background-image: url('{{img_url}}');
+    background-size: cover;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.522);
+    background-blend-mode: darken;
+    /* Make it cover the whole viewport height */
+  }
+</style>
 {% endblock %}

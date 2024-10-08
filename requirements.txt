@@ -18,5 +18,9 @@ openai>=1.51.0
 Flask-Mail==0.10.0
 Flask-WTF==1.2.1
 WTForms==3.1.2
+<<<<<<< HEAD
 google-api-python-client==2.147.0
 flask_sqlalchemy==3.1.1
+=======
+pyunsplash=1.2.5
+>>>>>>> bugfix/GRO-123-task-7-add-API-error-handling
