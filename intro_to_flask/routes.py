@@ -85,4 +85,16 @@ def set_preferences():
     db.session.commit()
 
     return jsonify({'message': 'Preferences saved successfully!'})
-  
+
+@app.route('/preferences/<int:user_id>', methods=['GET'])
+def get_preferences(user_id):
+    preferences = UserPreference.query.filter_by(user_id=user_id).first()
+    if not preferences:
+        return jsonify({'error': 'Preferences not found'}), 404
+
+    return jsonify({
+        'theme': preferences.theme,
+        'font_size': preferences.font_size,
+        'notifications_enabled': preferences.notifications_enabled
+    })
+
