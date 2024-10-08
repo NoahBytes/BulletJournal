@@ -4,10 +4,11 @@ from openai import OpenAI
 import re #regular expressions module
 from markupsafe import escape #protects projects against injection attacks
 from intro_to_flask import app
-import sys 
+import sys
 sys.dont_write_bytecode = True
 from flask import render_template, request, Flask, Blueprint
 from .journal_form import JournalForm
+from .journal_class import Journal
 
 journal_blueprint = Blueprint('journal', __name__)
 
@@ -20,6 +21,9 @@ def journal():
       if form.validate() == False:
         return render_template('journal.html', form=form)
       else:
+        journal = Journal(form.title.data, form.content.data)
+        journal.save()
+
         return render_template('journal.html', success=True)
       
   elif request.method == 'GET':
