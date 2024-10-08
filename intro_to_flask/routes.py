@@ -12,7 +12,7 @@ from .ask_python.ask_route import ask_blueprint
 from .draw_python.draw_route import draw_blueprint
 from .journal_python.journal_route import journal_blueprint
 from .transcribe_python.transcribe_route import transcribe_blueprint
-
+from intro_to_flask.models import User, UserPreference  # Import the models
 
 #The mail_user_name and mail_app_password values are in the .env file
 #Google requires an App Password as of May, 2022: 
@@ -59,4 +59,30 @@ app.register_blueprint(journal_blueprint)
 app.register_blueprint(ask_blueprint) 
 app.register_blueprint(draw_blueprint) 
 app.register_blueprint(transcribe_blueprint)
+
+# New route for Create operation (Setting User Preferences)
+@app.route('/preferences', methods=['POST'])
+def set_preferences():
+    user_id = request.json.get('user_id')
+    theme = request.json.get('theme', 'light')
+    font_size = request.json.get('font_size', 'medium')
+    notifications_enabled = request.json.get('notifications_enabled', True)
+
+    # Fetch the user by ID
+    user = User.query.get(user_id)
+    if not user:
+        return jsonify({'error': 'User not found'}), 404
+
+    # Create and save the user's preferences
+    user_preferences = UserPreference(
+        theme=theme,
+        font_size=font_size,
+        notifications_enabled=notifications_enabled,
+        user_id=user_id
+    )
+
+    db.session.add(user_preferences)
+    db.session.commit()
+
+    return jsonify({'message': 'Preferences saved successfully!'})
   
