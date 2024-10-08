@@ -17,7 +17,8 @@ def get_calendar_events():
         return events
     else:
         print(f"Error fetching events: {response.status_code}, {response.json()}")
-        return []
+        return [] 
+
 
 def display_events(events):
     if not events:

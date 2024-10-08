@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/toastui-calendar.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tui-calendar.css') }}">
+
+    <style>
+        .high-priority { background-color: #ff6666; } /* Red */
+        .medium-priority { background-color: #ffcc66; } /* Orange */
+        .low-priority { background-color: #66ff66; } /* Green */
+        #calendar { 
+            width: 100%;  
+            height: 600px; 
+            margin: 20px auto;  
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h2>Calendar</h2>
+    <div id="calendar"></div>
+
+    <script src="{{ url_for('static', filename='js/toastui-calendar.min.js') }}"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const calendar = new tui.Calendar('#calendar', {
+          defaultView: 'month',
+          taskView: true,
+          scheduleView: ['time'],
+          timezone: {
+            zones: [
+              {
+                timezoneName: 'America/Chicago', 
+                displayLabel: 'Chicago',
+                tooltip: 'Chicago Time (CST)'
+              }
+            ],
+            offsetCalculator: (time, options) => 0 // Default to UTC
+          }
+        });
+
+
+        const fetchedEvents = {{ events | tojson | safe }};  
+
+        const formattedEvents = fetchedEvents.map(event => ({
+          id: event.id,
+          calendarId: '1',
+          title: event.summary,
+          category: 'time',
+          start: event.start.dateTime || event.start.date,  
+          end: event.end.dateTime || event.end.date,
+          className: event.priority_class || 'low-priority'  
+        }));
+
+        if (typeof calendar.createEvents === 'function') {
+          calendar.createEvents(formattedEvents);
+        } else {
+          console.error("calendar.createEvents is not a function. Available methods:", calendar);
+        }
+      });
+    </script>
+</body>
+
+{% endblock %}

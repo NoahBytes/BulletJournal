@@ -21,3 +21,4 @@ db = SQLAlchemy(app)
 from .routes import mail
 
 from intro_to_flask import models
+
