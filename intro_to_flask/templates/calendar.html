@@ -4,55 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendar and Upcoming Events</title>
-
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.css">
-
-    <!-- JS -->
-    <script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
+    <title>Calendar</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/toastui-calendar.min.css') }}">
-    <script src="{{ url_for('static', filename='js/toastui-calendar.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tui-calendar.css') }}">
 
     <style>
         .high-priority { background-color: #ff6666; } /* Red */
         .medium-priority { background-color: #ffcc66; } /* Orange */
         .low-priority { background-color: #66ff66; } /* Green */
-        #calendar { /*Critical for rendering calendar because 'main.css' margin:0*/
-    width: 100%;  /* Set width to full */
-    height: 600px; /* Set a minimum height */
-    margin: 20px auto;  /* Center the calendar */
-    box-sizing: border-box;
-  }
+        #calendar { 
+            width: 100%;  
+            height: 600px; 
+            margin: 20px auto;  
+            box-sizing: border-box;
+        }
     </style>
 </head>
 <body>
     <h2>Calendar</h2>
     <div id="calendar"></div>
-  
+
+    <script src="{{ url_for('static', filename='js/toastui-calendar.min.js') }}"></script>
+
     <script>
-      // Initialize the calendar
-      const calendar = new tui.Calendar('#calendar', {
-        defaultView: 'month',
-        taskView: true,
-        scheduleView: ['time']
-      });
-  
-      // Define the events (this could come from your server or Flask)
-      const events = [
-        {
-          id: '1',
+      document.addEventListener('DOMContentLoaded', function () {
+        const calendar = new tui.Calendar('#calendar', {
+          defaultView: 'month',
+          taskView: true,
+          scheduleView: ['time'],
+          timezone: {
+            zones: [
+              {
+                timezoneName: 'America/Chicago', 
+                displayLabel: 'Chicago',
+                tooltip: 'Chicago Time (CST)'
+              }
+            ],
+            offsetCalculator: (time, options) => 0 // Default to UTC
+          }
+        });
+
+
+        const fetchedEvents = {{ events | tojson | safe }};  
+
+        const formattedEvents = fetchedEvents.map(event => ({
+          id: event.id,
           calendarId: '1',
-          title: 'Test Event',
+          title: event.summary,
           category: 'time',
-          start: '2024-10-04T23:45:00-05:00',
-          end: '2024-10-05T00:45:00-05:00'
+          start: event.start.dateTime || event.start.date,  
+          end: event.end.dateTime || event.end.date,
+          className: event.priority_class || 'low-priority'  
+        }));
+
+        if (typeof calendar.createEvents === 'function') {
+          calendar.createEvents(formattedEvents);
+        } else {
+          console.error("calendar.createEvents is not a function. Available methods:", calendar);
         }
-      ];
-  
+      });
     </script>
-  </body>
-  
+</body>
+
 {% endblock %}

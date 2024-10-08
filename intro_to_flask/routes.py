@@ -12,8 +12,7 @@ from .ask_python.ask_route import ask_blueprint
 from .draw_python.draw_route import draw_blueprint
 from .journal_python.journal_route import journal_blueprint
 from .transcribe_python.transcribe_route import transcribe_blueprint
-#from calendar_python.google_calendar import get_calendar_events
-#from calendar_python import calendar_blueprint
+from .calendar_python.google_calendar import get_calendar_events
 
 #The mail_user_name and mail_app_password values are in the .env file
 #Google requires an App Password as of May, 2022: 
@@ -57,7 +56,7 @@ def contact():
       return render_template('contact.html', form=form)
 
 
-from .calendar_python.google_calendar import get_calendar_events
+
 @app.route('/calendar')
 def display_calendar_events():
     events = get_calendar_events()
@@ -68,4 +67,3 @@ app.register_blueprint(journal_blueprint)
 app.register_blueprint(ask_blueprint) 
 app.register_blueprint(draw_blueprint) 
 app.register_blueprint(transcribe_blueprint)
-#app.register_blueprint(calendar_blueprint)
