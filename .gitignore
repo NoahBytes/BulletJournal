@@ -13,3 +13,5 @@ venv/
 intro_to_flask/temp/
 
 /node_modules
+
+intro_to_flask/journals
