@@ -106,7 +106,7 @@ We had to rebuild our Jira halfway through since the original organization of ou
 
    - Now that the journals can be created and saved, we will implement the rendering and editing of previous journals.
    - With the database implemented, we will build a settings page and save information about the user's preferences.
-   - With the calendar rendered, we will add the abiliy to modify events and filter through them.
+   - With the calendar rendered, we will add the ability to modify events and filter through them.
    - We will add a Quote API to the homepage as well as a greeting to make the homepage more personalized and interesting.
    - We will add a symbol key to the journal page so that user's can specify the type of journal (i.e. task, event, reminder, notes, etc.)
 
