@@ -1,15 +1,15 @@
 ![Logo for Bullet Journal](intro_to_flask/static/img/BulletJournalIcon.png)
 # Bullet Journal
 Digital bullet journal that helps creatives, students, and professionals balance their mental health, work, and ideas. 
-## Created by
+### Created by
 Noah Alavi, Frances Andrews, Shawn Spicer, and Athene Yowell.
 
-## General Information
+### General Information
 - Bullet Journal is a digital bullet journal application that allows users to track mental health over time, utilize journaling and note taking functionality, keep track of their work, and syncing with their calendar of choice.
 - As students we were inspired by physical bullet journals and the mindset it fosters. Note taking apps are often minimalist, so we decided to make a customizable app that integrates functionality impossible in a physical journal, such as music or dynamic calendaring.
 - We hope that this application will give the user a pleasant and efficient user experience with whichever functionality they use, be it listening to music and journaling, tracking their mood and creating graphs with the data, or tracking their assignments and staying on top of their work.
 
-## Technologies Used
+### Technologies Used
 - Quotes: https://api-ninjas.com/api/quotes
 - Recipes: https://api-ninjas.com/api/recipe 
 - Spotify: https://developer.spotify.com/documentation/web-api
@@ -95,8 +95,8 @@ Noah Alavi, Frances Andrews, Shawn Spicer, and Athene Yowell.
 
 #### Reports
 
-## Note:
- - We had to rebuild our Jira halfway through since the original organization of our first sprint meant we could not get any work down, thus the work from both sprints/reports are included here.
+##### Note:
+We had to rebuild our Jira halfway through since the original organization of our first sprint meant we could not get any work down, thus the work from both sprints/reports are included here.
 
 ![Burnup Chart 1](intro_to_flask/static/img/Sprint1Burnup1.png)
 
@@ -111,5 +111,5 @@ Noah Alavi, Frances Andrews, Shawn Spicer, and Athene Yowell.
    - We will add a symbol key to the journal page so that user's can specify the type of journal (i.e. task, event, reminder, notes, etc.)
 
 
-## Project Status
+#### Project Status
 Project is: _in progress_ 
