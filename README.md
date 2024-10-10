@@ -64,14 +64,14 @@ Noah Alavi, Frances Andrews, Shawn Spicer, and Athene Yowell.
     - [GRO-112](https://cs3398-betazoids-f24.atlassian.net/jira/software/projects/GRO/boards/2?selectedIssue=GRO-112),
     [Bitbucket](https://bitbucket.org/%7B%7D/%7B029ccb6f-2730-489b-9350-d5527dec1d1f%7D/branch/feature/GRO-112-calendar-data-extract)
   - `Jira Task: Task 3: Display Calendar Events`
-    - [SCRUM-64](https://cs3398-betazoids-f24.atlassian.net/jira/software/projects/GRO/boards/2?selectedIssue=GRO-113),
+    - [GRO-113](https://cs3398-betazoids-f24.atlassian.net/jira/software/projects/GRO/boards/2?selectedIssue=GRO-113),
     [Bitbucket](https://bitbucket.org/%7B%7D/%7B029ccb6f-2730-489b-9350-d5527dec1d1f%7D/branch/feature/GRO-113-display-calendar-events)
 <br />
 
 **Athene**: "Built homepage and designed modular CSS/html that team can build around"
 
   - `Jira Task: Task 1: Review boilerplate CSS and refactor it to be global for all pages.`
-    - [SRUM-45](https://cs3398-betazoids-f24.atlassian.net/jira/software/projects/GRO/boards/2?selectedIssue=GRO-87),
+    - [GRO-87](https://cs3398-betazoids-f24.atlassian.net/jira/software/projects/GRO/boards/2?selectedIssue=GRO-87),
     [Bitbucket](https://bitbucket.org/%7B%7D/%7B029ccb6f-2730-489b-9350-d5527dec1d1f%7D/branch/GRO-87-task-1-review-boilerplate-css)
   - `Jira Task: Task 2: Implement Dark mode considerations based off of browser preferences.`
     - [GRO-88](https://cs3398-betazoids-f24.atlassian.net/jira/software/projects/GRO/boards/2?selectedIssue=GRO-88),
