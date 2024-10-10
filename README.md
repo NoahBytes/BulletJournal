@@ -64,7 +64,7 @@ Noah Alavi, Frances Andrews, Shawn Spicer, and Athene Yowell.
     - [GRO-112](https://cs3398-betazoids-f24.atlassian.net/jira/software/projects/GRO/boards/2?selectedIssue=GRO-112),
     [Bitbucket](https://bitbucket.org/%7B%7D/%7B029ccb6f-2730-489b-9350-d5527dec1d1f%7D/branch/feature/GRO-112-calendar-data-extract)
   - `Jira Task: Task 3: Display Calendar Events`
-    - [SCRUM-64](https://cs3398-betazoids-f24.atlassian.net/jira/software/projects/GRO/boards/2?selectedIssue=GRO-113),
+    - [GRO-113](https://cs3398-betazoids-f24.atlassian.net/jira/software/projects/GRO/boards/2?selectedIssue=GRO-113),
     [Bitbucket](https://bitbucket.org/%7B%7D/%7B029ccb6f-2730-489b-9350-d5527dec1d1f%7D/branch/feature/GRO-113-display-calendar-events)
 <br />
 
